@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid</title>
+    <style>
+        .container{
+            display: grid;
+            /*grid-template-columns: 200px 200px 200px;/*u can use 1fr or u can do repeat(3, 1fr)*/
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));/*jitne boxes aa sakte wo sare fill krlenge ek line me*/
+            grid-gap: 20px;/*same as margin*/
+            column-gap: 40px;
+            row-gap: 40px;
+            grid-auto-rows: minmax(100px, auto);/*same as height, min height 100, max is auto*/
+            grid-auto-columns: minmax(50px, auto);
+        }
+        .items{
+            background-color: lightcoral;
+            border: 3px green solid;
+            border-radius: 3px;
+        }
+        /* #item-2{
+            grid-row-start: 2;/*row start and end*/
+        /*    grid-row-end: 3;
+            grid-column-start: 2;
+            grid-column-end: 3;
+        } */
+
+        #item-1{
+            grid-column-start: 1;
+            grid-column-end: 7;
+        }
+        .item-1-container{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .nested-item{
+            border: 3px greenyellow solid;
+            border-radius: 3px;
+            background-color: lightgoldenrodyellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="items item-1-container" id="item-1">
+            <div class="nested-item">dabe me dabaa</div>
+            <div class="nested-item">dabe me dabaa</div>
+            <div class="nested-item">dabe me dabaa</div>
+        </div>
+        <div class="items" id="item-2">Dabba 2</div>
+        <div class="items">Dabba 3</div>
+        <div class="items">Dabba 4</div>
+        <div class="items">Dabba 5</div>
+    </div>
+</body>
+</html>
