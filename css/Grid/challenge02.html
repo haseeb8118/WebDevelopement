@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid-Challenge-02</title>
+    <style>
+        .nav{
+            grid-area: nav;
+        }
+        .header{
+            grid-area: header;
+        }
+        .article{
+            grid-area: article;
+        }
+        .ads{
+            grid-area: ads;
+        }
+        .footer{
+            grid-area: footer;
+        }
+        .container{
+            display: grid;
+            grid-template-areas:
+            "nav header  header  header"
+            "nav article article ads"
+            "nav article article ads"
+            "nav footer  footer  footer";
+            grid-gap: 10px;
+            grid-row-start: 1;
+            grid-row-end: 7;
+            grid-auto-rows: 100%;
+        }
+        .items{
+            background-color: #f9d84a;
+            padding-left: 5%;
+            padding-top: 2%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="items nav">Nav</div>
+        <div class="items header">Header</div>
+        <div class="items article">Article</div>
+        <div class="items ads">Ads</div>
+        <div class="items footer">Footer</div>
+    </div>
+</body>
+</html>
